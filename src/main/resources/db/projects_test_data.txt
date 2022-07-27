@@ -1,0 +1,12 @@
+INSERT INTO public.projects(
+	id, title, service_area, client, duration_start, duration_end, contact_information, description, assessment_recommendations)
+	VALUES (
+		'SA000' || generate_series(1, 99),
+		'TEST' || generate_series(1, 99),
+		random()*100,
+		'TEST' || generate_series(1, 99),
+		'2022-07-15',
+		'2023-07-15',
+		'TEST' || generate_series(1, 99),
+		'TEST' || generate_series(1, 99),
+		'{TEST}');

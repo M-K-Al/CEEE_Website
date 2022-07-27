@@ -38,6 +38,11 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <%
+                        String stringPageNumber = request.getParameter("page");
+                        int pageNumber = stringPageNumber == null ? 1 : Integer.parseInt(stringPageNumber);
+
+                    %>
                     <c:forEach items="${variables}" var="item" varStatus="loop">
                         <tr>
                             <td class="py-4 px-6">${loop.index+1}</td>

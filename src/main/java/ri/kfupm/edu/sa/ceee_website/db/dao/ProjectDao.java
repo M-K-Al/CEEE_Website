@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ProjectDao {
 
-    List<Project> findAll();
+    List<Project> findForList(int page);
 
     Project findById(int id);
 
