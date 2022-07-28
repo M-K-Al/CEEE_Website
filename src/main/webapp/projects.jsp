@@ -5,8 +5,12 @@
   Time: 11:00 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="ri.kfupm.edu.sa.ceee_website.db.impl.ProjectDaoImpl" %>
+<%@ page import="ri.kfupm.edu.sa.ceee_website.db.dao.ProjectDao" %>
+<%@ page import="ri.kfupm.edu.sa.ceee_website.db.bean.Project" %>
+<%@ page import="java.util.List" %>
 <html>
 <head>
     <title>Projects</title>
@@ -38,20 +42,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <%
-                        String stringPageNumber = request.getParameter("page");
-                        int pageNumber = stringPageNumber == null ? 1 : Integer.parseInt(stringPageNumber);
-
-                    %>
-                    <c:forEach items="${variables}" var="item" varStatus="loop">
+                    <c:forEach items="${projects}" var="project" varStatus="loop">
                         <tr>
-                            <td class="py-4 px-6">${loop.index+1}</td>
-                            <td class="whitespace-nowrap py-4 px-6 font-medium text-gray-900 dark:text-white">${item}</td>
-                            <td class="py-4 px-6">156.5</td>
-                            <td class="py-4 px-6">test</td>
-                            <td class="py-4 px-6">24-07-22</td>
-                            <td class="py-4 px-6">24-08-22</td>
-                            <td class="py-4 px-6">test@test.com</td>
+                            <td class="py-4 px-6">${project.id}</td>
+                            <td class="whitespace-nowrap py-4 px-6 font-medium text-gray-900 dark:text-white">${project.title}</td>
+                            <td class="py-4 px-6">${project.serviceArea}</td>
+                            <td class="py-4 px-6">${project.client}</td>
+                            <td class="py-4 px-6">${project.durationStart}</td>
+                            <td class="py-4 px-6">${project.durationEnd}</td>
+                            <td class="py-4 px-6">${project.contactInformation}</td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -62,7 +61,7 @@
                             class="font-semibold text-gray-900">1000</span></span>
                     <ul class="inline-flex items-center -space-x-px">
                         <li>
-                            <a href="#"
+                            <a href="?page=${(param.page-1) <= 0 ? 1 : (param.page-1)}"
                                class="ml-0 block rounded-l-lg border border-gray-300 bg-white py-2 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <span class="sr-only">Previous</span>
                                 <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -94,7 +93,7 @@
                                class="border border-gray-300 bg-white py-2 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="?page=${param.page+1}"
                                class="block rounded-r-lg border border-gray-300 bg-white py-2 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <span class="sr-only">Next</span>
                                 <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"

@@ -12,6 +12,7 @@ public class Database {
     public static Connection getConnection() {
         if (conn == null) {
             try {
+                Class.forName("org.postgresql.Driver");
                 String dbURL = "jdbc:postgresql://localhost/CEEE";
                 conn = DriverManager.getConnection(dbURL, "postgres", "1234");
             } catch (Exception e) {

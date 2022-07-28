@@ -14,9 +14,16 @@ public class ProjectDaoImpl implements ProjectDao {
 
     @Override
     public List<Project> findForList(int page) {
-        final String query = "SELECT id, title, service_area, client, duration_start, duration_end, contact_information FROM projects LIMIT 10 OFFSET ?";
+        final String query = "SELECT id," +
+                " title," +
+                " service_area," +
+                " client," +
+                " duration_start," +
+                " duration_end," +
+                " contact_information" +
+                " FROM projects LIMIT 10 OFFSET ?";
         try (final PreparedStatement preparedStatement = getConnection().prepareStatement(query)) {
-            preparedStatement.setInt(1, page * 10);
+            preparedStatement.setInt(1, (page - 1) * 10);
             final ResultSet set = preparedStatement.executeQuery();
             final List<Project> projects = new ArrayList<>(11);
             while (set.next()) {

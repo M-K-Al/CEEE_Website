@@ -6,17 +6,25 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.jetbrains.annotations.NotNull;
+import ri.kfupm.edu.sa.ceee_website.db.impl.ProjectDaoImpl;
 
 import java.io.IOException;
 
-@WebServlet("/projects")
+@WebServlet(value = "/projects")
 public class ProjectsServlet extends HttpServlet {
     @Override
     public void doGet(@NotNull HttpServletRequest request,
                       HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Hello, World!");
-        String[] var = new String[]{"Number 1", "Number 2", "Number 3", "Number 4", "Number 5", "Number 6"};
-        request.setAttribute("variables", var);
+        int pageNumber;
+        try {
+            final String stringPageNumber = request.getParameter("page");
+            pageNumber = stringPageNumber == null ? 1 : Integer.parseInt(stringPageNumber);
+            if (pageNumber <= 0) pageNumber = 1;
+        } catch (final Exception e) {
+            throw e;
+        }
+        request.setAttribute("page", pageNumber);
+        request.setAttribute("projects", new ProjectDaoImpl().findForList(pageNumber));
         getServletContext().getRequestDispatcher("/projects.jsp").forward(request, response);
     }
 }
