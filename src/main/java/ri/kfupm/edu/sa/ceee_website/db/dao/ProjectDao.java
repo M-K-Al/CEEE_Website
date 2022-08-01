@@ -6,9 +6,11 @@ import java.util.List;
 
 public interface ProjectDao {
 
-    List<Project> findForList(int page);
+    List<Project> findForList(int page, int count);
 
-    Project findById(int id);
+    int count();
+
+    Project findById(String id);
 
     void save(Project project);
 

@@ -13,7 +13,7 @@ public class Project {
     private Date durationEnd;
     private String contactInformation;
     private String description;
-    private String[] assessmentRecommendation;
+    private String[] assessmentRecommendations;
 
     public Project() {
     }
@@ -26,7 +26,7 @@ public class Project {
                    Date durationEnd,
                    String contactInformation,
                    String description,
-                   String[] assessmentRecommendation) {
+                   String[] assessmentRecommendations) {
         this.id = id;
         this.title = title;
         this.serviceArea = serviceArea;
@@ -35,7 +35,7 @@ public class Project {
         this.durationEnd = durationEnd;
         this.contactInformation = contactInformation;
         this.description = description;
-        this.assessmentRecommendation = assessmentRecommendation;
+        this.assessmentRecommendations = assessmentRecommendations;
     }
 
     public String getId() {
@@ -110,27 +110,27 @@ public class Project {
         return this;
     }
 
-    public String[] getAssessmentRecommendation() {
-        return assessmentRecommendation;
+    public String[] getAssessmentRecommendations() {
+        return assessmentRecommendations;
     }
 
-    public Project setAssessmentRecommendation(String[] assessmentRecommendation) {
-        this.assessmentRecommendation = assessmentRecommendation;
+    public Project setAssessmentRecommendations(String[] assessmentRecommendations) {
+        this.assessmentRecommendations = assessmentRecommendations;
         return this;
     }
 
     @Override
     public String toString() {
         return "Project{" +
-                "id='" + id + '\'' +
-                ", title='" + title + '\'' +
-                ", serviceArea=" + serviceArea +
-                ", client='" + client + '\'' +
-                ", durationStart=" + durationStart +
-                ", durationEnd=" + durationEnd +
-                ", contactInformation='" + contactInformation + '\'' +
-                ", description='" + description + '\'' +
-                ", assessmentRecommendation=" + Arrays.toString(assessmentRecommendation) +
-                '}';
+               "id='" + id + '\'' +
+               ", title='" + title + '\'' +
+               ", serviceArea=" + serviceArea +
+               ", client='" + client + '\'' +
+               ", durationStart=" + durationStart +
+               ", durationEnd=" + durationEnd +
+               ", contactInformation='" + contactInformation + '\'' +
+               ", description='" + description + '\'' +
+               ", assessmentRecommendation=" + Arrays.toString(assessmentRecommendations) +
+               '}';
     }
 }

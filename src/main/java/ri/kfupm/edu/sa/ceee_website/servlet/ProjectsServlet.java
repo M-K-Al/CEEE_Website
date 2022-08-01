@@ -15,16 +15,44 @@ public class ProjectsServlet extends HttpServlet {
     @Override
     public void doGet(@NotNull HttpServletRequest request,
                       HttpServletResponse response) throws ServletException, IOException {
+        final ProjectDaoImpl projectDao = new ProjectDaoImpl();
         int pageNumber;
+        int projectsCount = projectDao.count();
+        final int maxPages = (int) Math.ceil(projectsCount / 10.0);
         try {
             final String stringPageNumber = request.getParameter("page");
             pageNumber = stringPageNumber == null ? 1 : Integer.parseInt(stringPageNumber);
-            if (pageNumber <= 0) pageNumber = 1;
-        } catch (final Exception e) {
-            throw e;
+            pageNumber = pageNumber <= 0 ? 1 : Math.min(pageNumber, maxPages);
+        } catch (final NumberFormatException numberFormatException) {
+            pageNumber = 1;
         }
+
         request.setAttribute("page", pageNumber);
-        request.setAttribute("projects", new ProjectDaoImpl().findForList(pageNumber));
-        getServletContext().getRequestDispatcher("/projects.jsp").forward(request, response);
+        request.setAttribute("projects", projectDao.findForList(pageNumber, 10));
+        request.setAttribute("maxPages", maxPages);
+        request.setAttribute("projectsCount", projectsCount);
+
+        int paginationSelected;
+
+        if (pageNumber < 4) {
+            paginationSelected = pageNumber;
+            request.setAttribute("paginationSecondButton", 2);
+            request.setAttribute("paginationThirdButton", 3);
+            request.setAttribute("paginationForthButton", "...");
+        } else if (pageNumber < maxPages - 2) {
+            paginationSelected = 3;
+            request.setAttribute("paginationSecondButton", "...");
+            request.setAttribute("paginationThirdButton", pageNumber);
+            request.setAttribute("paginationForthButton", "...");
+        } else {
+            paginationSelected = 5 - (maxPages - pageNumber);
+            request.setAttribute("paginationSecondButton", "...");
+            request.setAttribute("paginationThirdButton", maxPages - 2);
+            request.setAttribute("paginationForthButton", maxPages - 1);
+        }
+
+        request.setAttribute("paginationSelected", paginationSelected);
+
+        getServletContext().getRequestDispatcher("/projects/projects.jsp").forward(request, response);
     }
 }
