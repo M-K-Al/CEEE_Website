@@ -9,7 +9,7 @@
 <head>
     <title>Projects</title>
     <link href="../styles/tailwind.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
@@ -42,8 +42,13 @@
                     <tbody>
                     <c:forEach items="${projects}" var="project" varStatus="loop">
                         <tr>
-                            <td class="py-4 px-6">${project.id}</td>
-                            <td class="whitespace-nowrap py-4 px-6 font-medium text-gray-900 dark:text-white">${project.title}</td>
+                            <td class="py-4 px-6">
+                                <a href="project?id=${project.id}"
+                                   class="text-blue-600 hover:text-blue-800 visited:text-purple-600 font-medium">
+                                        ${project.id}
+                                </a>
+                            </td>
+                            <td class="whitespace-nowrap py-4 px-6 text-gray-900 dark:text-white">${project.title}</td>
                             <td class="py-4 px-6">${project.serviceArea}</td>
                             <td class="py-4 px-6">${project.client}</td>
                             <td class="py-4 px-6">${project.durationStart}</td>
@@ -111,7 +116,9 @@
 </div>
 
 
-<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="exampleModalCenteredScrollable" tabindex="-1" aria-labelledby="exampleModalCenteredScrollable" aria-modal="true" role="dialog">
+<div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+     id="exampleModalCenteredScrollable" tabindex="-1" aria-labelledby="exampleModalCenteredScrollable"
+     aria-modal="true" role="dialog">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable relative w-auto pointer-events-none">
         <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
             <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
@@ -123,7 +130,11 @@
                         data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body relative p-4">
-                <p>This is some placeholder content to show a vertically centered modal. We've added some extra copy here to show how vertically centering the modal works when combined with scrollable modals. We also use some repeated line breaks to quickly extend the height of the content, thereby triggering the scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.</p>
+                <p>This is some placeholder content to show a vertically centered modal. We've added some extra copy
+                    here to show how vertically centering the modal works when combined with scrollable modals. We also
+                    use some repeated line breaks to quickly extend the height of the content, thereby triggering the
+                    scrolling. When content becomes longer than the predefined max-height of modal, content will be
+                    cropped and scrollable within the modal.</p>
                 <br><br><br><br><br><br><br><br><br><br>
                 <p>Just like that.</p>
             </div>

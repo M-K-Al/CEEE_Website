@@ -7,7 +7,7 @@ public class Project {
 
     private String id;
     private String title;
-    private double serviceArea;
+    private String serviceArea;
     private String client;
     private Date durationStart;
     private Date durationEnd;
@@ -20,7 +20,7 @@ public class Project {
 
     public Project(String id,
                    String title,
-                   double serviceArea,
+                   String serviceArea,
                    String client,
                    Date durationStart,
                    Date durationEnd,
@@ -56,11 +56,11 @@ public class Project {
         return this;
     }
 
-    public double getServiceArea() {
+    public String getServiceArea() {
         return serviceArea;
     }
 
-    public Project setServiceArea(double serviceArea) {
+    public Project setServiceArea(String serviceArea) {
         this.serviceArea = serviceArea;
         return this;
     }
