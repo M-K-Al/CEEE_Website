@@ -54,7 +54,7 @@
         </ol>
     </nav>
     <div class="lg:flex">
-        <div class="bg-white shadow overflow-hidden mx-6 my-4 border-t rounded-lg lg:max-w-3xl lg:mr-0">
+        <div class="bg-white shadow overflow-hidden mx-6 my-4 border-t rounded-lg lg:min-w-4xl lg:mr-0">
             <div class="px-4 py-5 sm:px-6">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">${project.title}</h3>
                 <p class="mt-1 max-w-2xl text-sm text-gray-500">${project.id}</p>
@@ -102,7 +102,7 @@
             </div>
         </div>
 
-        <div class="p-4 m-auto basis-[125%]">
+        <div class="p-4 m-auto basis-full">
             <div id="projectCarousel" class="carousel slide relative" data-bs-ride="carousel">
                 <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
                     <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class=""
@@ -118,7 +118,7 @@
                             <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(123).jpg" class="block w-full">
                             <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50"></div>
                         </div>
-                        <div class="carousel-caption hidden md:block absolute text-center">
+                        <div class="carousel-caption hidden md:block lg:hidden xl:block absolute text-center">
                             <h5 class="text-xl">First slide label</h5>
                             <p>Some representative placeholder content for the first slide.</p>
                         </div>
@@ -128,9 +128,9 @@
                             <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(124).jpg" class="block w-full">
                             <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50"></div>
                         </div>
-                        <div class="carousel-caption hidden md:block absolute text-center">
+                        <div class="carousel-caption hidden md:block lg:hidden xl:block absolute text-center">
                             <h5 class="text-xl">Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
+                            <p>Some representative placeholder content for the second slide. </p>
                         </div>
                     </div>
                     <div class="carousel-item relative float-left w-full">
@@ -138,7 +138,7 @@
                             <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(125).jpg" class="block w-full">
                             <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed bg-black opacity-50"></div>
                         </div>
-                        <div class="carousel-caption hidden md:block absolute text-center">
+                        <div class="carousel-caption hidden md:block lg:hidden xl:block absolute text-center">
                             <h5 class="text-xl">Third slide label</h5>
                             <p>Some representative placeholder content for the third slide.</p>
                         </div>
@@ -149,7 +149,7 @@
                     <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                <button class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline  right-0"
                         type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
