@@ -4,9 +4,11 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import org.jetbrains.annotations.NotNull;
+import ri.kfupm.edu.sa.ceee_website.db.bean.Project;
 import ri.kfupm.edu.sa.ceee_website.db.impl.ProjectDaoImpl;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -15,7 +17,16 @@ public class ProjectViewServlet extends HttpServlet {
     @Override
     protected void doGet(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         final ProjectDaoImpl projectDao = new ProjectDaoImpl();
-        request.setAttribute("project", projectDao.findById(request.getParameter("id")));
+//        request.setAttribute("project", projectDao.findById(request.getParameter("id")));
+        request.setAttribute("project", new Project("1",
+                "test",
+                "rather unclear",
+                "Aramco",
+                new Date(1),
+                new Date(2),
+                "test",
+                "test",
+                new String[]{"test"}));
         getServletContext().getRequestDispatcher("/projects/project-view.jsp").forward(request, response);
     }
 }

@@ -7,9 +7,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.jetbrains.annotations.NotNull;
+import ri.kfupm.edu.sa.ceee_website.db.bean.Project;
 import ri.kfupm.edu.sa.ceee_website.db.impl.ProjectDaoImpl;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.util.List;
 
 @WebServlet(value = "/projects")
 public class ProjectsServlet extends HttpServlet {
@@ -29,7 +32,27 @@ public class ProjectsServlet extends HttpServlet {
         }
 
         request.setAttribute("page", pageNumber);
-        request.setAttribute("projects", projectDao.findForList(pageNumber, 10));
+//        request.setAttribute("projects", projectDao.findForList(pageNumber, 10));
+        request.setAttribute("projects", List.of(
+                new Project("1",
+                        "test",
+                        "rather unclear",
+                        "Aramco",
+                        new Date(1),
+                        new Date(2),
+                        "test",
+                        "test",
+                        new String[]{"test"}),
+                new Project("2",
+                        "test",
+                        "rather unclear",
+                        "Aramco",
+                        new Date(1),
+                        new Date(2),
+                        "test",
+                        "test",
+                        new String[]{"test"})
+        ));
         request.setAttribute("maxPages", maxPages);
         request.setAttribute("projectsCount", projectsCount);
 
