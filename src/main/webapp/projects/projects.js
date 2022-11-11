@@ -1,1 +1,3 @@
-$('.pagination-selected').attr('class', 'z-10 border border-blue-300 bg-blue-50 py-2.5 px-3.5 leading-tight text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white');
+$('.pagination-selected').attr('class', 'z-10 border border-blue-300 ' +
+    'bg-blue-50 py-2.5 px-3.5 leading-tight text-blue-600 hover:bg-blue-100 ' +
+    'hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white');
