@@ -1,54 +1,31 @@
-Highcharts.chart('container', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'Browser market shares in March, 2022'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
+Highcharts.chart('eeueb-chart', {
+    credits: {
+        enabled: false
+    }, chart: {
+        style: {
+            fontFamily: 'Segoe UI'
+        }, plotBackgroundColor: null, plotBorderWidth: null, plotShadow: false, type: 'pie', options3d: {
+            enabled: true, alpha: 50
         }
-    },
-    plotOptions: {
+    }, title: {
+        text: undefined
+    }, tooltip: {
+        followPointer: false,
+        headerFormat: undefined,
+        shadow: false,
+        hideDelay: 100,
+        pointFormat: '{point.name}: <b>{point.percentage:.1f}% = {point.y} kWh/year</b>',
+    }, plotOptions: {
         pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: false
-            },
-            showInLegend: true
+            innerSize: '30%', depth: 60, dataLabels: {}
         }
-    },
-    series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Chrome',
-            y: 74.77,
-            sliced: true,
-            selected: true
-        },  {
-            name: 'Edge',
-            y: 12.82
-        },  {
-            name: 'Firefox',
-            y: 4.63
+    }, series: [{
+        name: 'Breakout', data: [{
+            name: 'Spacing cooling', y: 728910,
         }, {
-            name: 'Safari',
-            y: 2.44
+            name: 'Lighting and Plug Load', y: 65520,
         }, {
-            name: 'Internet Explorer',
-            y: 2.02
-        }, {
-            name: 'Other',
-            y: 3.28
+            name: 'Miscellaneous', y: 24570,
         }]
     }]
 });

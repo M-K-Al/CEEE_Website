@@ -1,16 +1,16 @@
 package ri.kfupm.edu.sa.ceee_website.servlet;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.jetbrains.annotations.NotNull;
 import ri.kfupm.edu.sa.ceee_website.db.bean.Project;
 import ri.kfupm.edu.sa.ceee_website.db.impl.ProjectDaoImpl;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.util.Arrays;
-import java.util.Iterator;
 
 @WebServlet(value = "/project")
 public class ProjectViewServlet extends HttpServlet {

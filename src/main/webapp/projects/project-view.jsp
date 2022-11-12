@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link href="../styles/tailwind.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"/>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>${project.title}</title>
 </head>
@@ -180,7 +180,7 @@
                 <div class="my-4 overflow-hidden rounded-lg border-t shadow">
 
                     <div class="px-4 py-5">
-                        <h3 class="text-lg font-medium leading-6 text-gray-900">EEM saving summary</h3>
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">EEM Saving Summary</h3>
                     </div>
 
                     <div class="border-t border-gray-200 text-center">
@@ -424,9 +424,14 @@
                     </div>
                 </div>
 
-                <div class="basis-1/2 overflow-hidden rounded-lg border-t shadow lg:ml-4">
-                    <figure class="highcharts-figure">
-                        <div id="container"></div>
+                <%-------------------------------- estimated end-use electricity breakout --------------------------------%>
+
+                <div class="basis-1/2 overflow-hidden rounded-lg border-t shadow mt-4 lg:mt-0 lg:ml-4 h-fit">
+                    <div class="px-4 py-5">
+                        <h3 class="text-lg font-medium leading-6 text-gray-900">Estimated End Use Electricity Breakout</h3>
+                    </div>
+                    <figure class="highcharts-figure border-t border-gray-200 py-6">
+                        <div id="eeueb-chart"></div>
                     </figure>
                 </div>
 
@@ -434,8 +439,11 @@
 
         </div>
     </div>
+
     <div class="mb-10"></div>
+
 </div>
+<jsp:include page="../common/footer.jsp"/>
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 <script type="text/javascript" src="../projects/project-view.js"></script>
 </body>

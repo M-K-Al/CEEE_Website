@@ -1,9 +1,5 @@
-<html>
-<head>
-    <title></title>
-    <link href="styles/tailwind.css" rel="stylesheet">
-</head>
-<body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <nav class="bg-gray-100">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between">
@@ -25,8 +21,10 @@
             </div>
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="block w-36" width="873" height="583"
-                         src="resources/logos/ceee_logo.png" alt="CEEE">
+                    <a class="flex items-center mb-4 sm:mb-0" href="<c:url value="/"/>">
+                        <img class="block w-36 select-none pointer-events-none" width="873" height="583"
+                             src="../resources/logos/ceee_logo.png" alt="CEEE">
+                    </a>
                 </div>
                 <div class="hidden sm:block sm:ml-6 self-center">
                     <div class="flex space-x-4">
@@ -48,5 +46,3 @@
         </div>
     </div>
 </nav>
-</body>
-</html>
