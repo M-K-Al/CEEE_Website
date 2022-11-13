@@ -7,7 +7,9 @@
 </head>
 <body class="min-h-screen flex flex-col">
 <jsp:include page="common/header.jsp"/>
-<div class="flex-1"></div>
+<div class="flex-1 m-auto">
+    test
+</div>
 <jsp:include page="common/footer.jsp"/>
 </body>
 </html>
