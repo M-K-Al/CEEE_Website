@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -8,56 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>CEEE</title>
 </head>
-<body class="relative flex min-h-screen flex-col justify-center overflow-hidden">
-<nav class="bg-transparent">
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div class="relative flex items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <!-- Mobile menu button-->
-                <button type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                        aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                         aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                    <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke-width="2" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="flex-shrink-0 flex items-center">
-                    <a class="flex items-center mb-4 sm:mb-0" href="<c:url value="/"/>">
-                        <img class="block w-36 select-none pointer-events-none" width="873" height="583"
-                             src="./resources/logos/ceee_logo.png" alt="CEEE">
-                    </a>
-                </div>
-                <div class="hidden sm:block sm:ml-6 self-center">
-                    <div class="flex space-x-4">
-                        <a href="projects"
-                           class="text-gray-600 hover:text-black text-base px-3 py-2 rounded-md text-sm font-medium"
-                           aria-current="page">Projects</a>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <div class="hidden sm:block sm:ml-6">
-                    <div class="flex space-x-4">
-                        <a href="javascript:void(0);"
-                           class="text-gray-600 hover:text-black text-base px-3 py-2 rounded-md text-sm font-medium"
-                           aria-current="page">Login</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-<div id="whole" class="absolute inset-0 -z-10"></div>
-<div class="m-auto flex select-none flex-col text-center">
-    <h1 class="z-10 mb-4 flex-1 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
+<body class="flex min-h-screen flex-col bg-gray-100">
+<jsp:include page="common/header.jsp"/>
+<div class="m-auto flex flex-col select-none">
+    <h1 class="mb-4 flex-1 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
         CEEE's
         <mark id="title"
               class="bg-gradient-to-r from-cyan-600 via-purple-400 to-emerald-600 bg-clip-text text-transparent">
@@ -65,7 +18,7 @@
         </mark>
     </h1>
 </div>
-<%--<jsp:include page="common/footer.jsp"/>--%>
+<jsp:include page="common/footer.jsp"/>
 </body>
 <style>
     :root {
@@ -79,7 +32,7 @@
     }
 
     @keyframes gradient {
-        0%, 100% {
+        0%,100% {
             background-position: left center;
         }
         15% {
@@ -102,6 +55,11 @@
         }
     }
 </style>
-<script src="index.js"></script>
+<script>
+    setInterval(function () {
+        const [from, to] = Math.random() > 0.5 ? ["right", "right"] : Math.random() > 0.5 ? ["center", "left"] : ["right", "right"];
+        $("#title").css("--animation-dire-from", from).css("--animation-dire-to", to);
+    }, 10000);
+</script>
 
 </html>
