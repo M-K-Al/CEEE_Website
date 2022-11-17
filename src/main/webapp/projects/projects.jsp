@@ -14,8 +14,8 @@
     <ul class="bg-cyan-400x space-y-4">
         <li class="flex items-center">
             <div class="relative overflow-x-auto p-3 shadow-md sm:rounded-lg">
-                <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
-                    <thead class="bg-gray-100 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+                <table class="w-full text-left text-sm text-gray-500">
+                    <thead class="bg-gray-100 text-xs uppercase text-gray-700">
                     <tr>
                         <th scope="col" class="py-3 px-6">ID</th>
                         <th scope="col" class="py-3 px-6">Project Title</th>
@@ -43,7 +43,7 @@
                                         ${project.id}
                                 </a>
                             </td>
-                            <td class="whitespace-nowrap py-4 px-6 text-gray-900 dark:text-white">${project.title}</td>
+                            <td class="whitespace-nowrap py-4 px-6 text-gray-900">${project.title}</td>
                             <td class="py-4 px-6">${project.serviceArea}</td>
                             <td class="py-4 px-6">${project.client}</td>
                             <td class="py-4 px-6">${project.durationStart}</td>
@@ -54,13 +54,13 @@
                     </tbody>
                 </table>
                 <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
-                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span
+                    <span class="text-sm font-normal text-gray-500">Showing <span
                             class="font-semibold text-gray-900">${page * 10 - 9}-${page * 10 > projectsCount ? projectsCount : page * 10}</span> of <span
                             class="font-semibold text-gray-900">${projectsCount}</span></span>
                     <ul id="pagination-group" class="inline-flex items-center -space-x-px">
                         <li class="${page > 1 ? 'block' : 'hidden'}">
                             <a id="pagination-previous-button" href="?page=${page-1}"
-                               class="ml-0 block rounded-l-lg border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                               class="ml-0 block rounded-l-lg border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700">
                                 <span class="sr-only">Previous</span>
                                 <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -72,28 +72,28 @@
                         </li>
                         <li class="${maxPages != 1 ? 'block' : 'hidden'}">
                             <a id="pagination-first-button" href="?page=1"
-                               class="${paginationSelected == 1 ? 'pagination-selected' : ''} border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                               class="${paginationSelected == 1 ? 'pagination-selected' : ''} border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700">1</a>
                         </li>
                         <li class="${maxPages > 1 ? 'block' : 'hidden'}">
                             <a id="pagination-second-button" ${page < 4 ? "href=\"?page=2\"" : "" }
-                               class="${paginationSelected == 2 ? 'pagination-selected' : ''} border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">${paginationSecondButton}</a>
+                               class="${paginationSelected == 2 ? 'pagination-selected' : ''} border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700">${paginationSecondButton}</a>
                         </li>
                         <li class="${maxPages > 2 ? 'block' : 'hidden'}">
                             <a id="pagination-third-button"
                                href="?page=${page < 4 ? 3 : page > maxPages - 3 ? maxPages-2 : page}"
-                               class="${paginationSelected == 3 ? 'pagination-selected' : ''} border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">${paginationThirdButton}</a>
+                               class="${paginationSelected == 3 ? 'pagination-selected' : ''} border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700">${paginationThirdButton}</a>
                         </li>
                         <li class="${maxPages > 3 ? 'block' : 'hidden'}">
                             <a id="pagination-forth-button" ${page > maxPages - 4 ? "href=\"?page=" += maxPages-1 += "\"" : "" }
-                               class="${paginationSelected == 4 ? 'pagination-selected' : ''} selected border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">${paginationForthButton}</a>
+                               class="${paginationSelected == 4 ? 'pagination-selected' : ''} selected border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700">${paginationForthButton}</a>
                         </li>
                         <li class="${maxPages > 4 ? 'block' : 'hidden'}">
                             <a id="pagination-fifth-button" href="?page=${maxPages}"
-                               class="${paginationSelected == 5 ? 'pagination-selected' : ''} border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">${maxPages}</a>
+                               class="${paginationSelected == 5 ? 'pagination-selected' : ''} border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700">${maxPages}</a>
                         </li>
                         <li class="${maxPages > page ? 'block' : 'hidden'}">
                             <a id="pagination-next-button" href="?page=${page+1}"
-                               class="block rounded-r-lg border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                               class="block rounded-r-lg border border-gray-300 bg-white py-2.5 px-3.5 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700">
                                 <span class="sr-only">Next</span>
                                 <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                                      xmlns="http://www.w3.org/2000/svg">

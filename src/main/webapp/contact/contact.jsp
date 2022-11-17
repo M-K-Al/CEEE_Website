@@ -19,13 +19,13 @@
 <div id="contact" class="mx-auto flex max-w-7xl flex-1 px-2 pb-6 sm:px-6 lg:px-8">
     <c:choose>
         <c:when test="${received}">
-            <section class="m-auto bg-white dark:bg-gray-900">
+            <section class="m-auto bg-white">
                 <div class="mx-auto max-w-screen-md px-4 py-8 lg:py-14">
-                    <h2 class="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                    <h2 class="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900">
                         Thank You</h2>
-                    <h4 class="mt-6 text-center font-light font-semibold tracking-tight text-gray-500 dark:text-gray-400 sm:text-xl md:text-2xl lg:mt-8 lg:mb-6">
+                    <h4 class="mt-6 text-center font-light font-semibold tracking-tight text-gray-500 sm:text-xl md:text-2xl lg:mt-8 lg:mb-6">
                         We've Received Your Feedback</h4>
-                    <h5 class="mt-4 text-center font-light font-semibold tracking-tight text-gray-500 dark:text-gray-400 sm:text-lg md:text-xl">
+                    <h5 class="mt-4 text-center font-light font-semibold tracking-tight text-gray-500 sm:text-lg md:text-xl">
                         For further information, please do not hesitate to <a class="underline" href="mailto:ceee@kfupm.edu.sa">contact
                         us.</a>
                     </h5>
@@ -33,16 +33,16 @@
             </section>
         </c:when>
         <c:otherwise>
-            <section class="bg-white dark:bg-gray-900">
+            <section class="bg-white">
                 <div class="mx-auto max-w-screen-md px-4 py-8 lg:py-14">
-                    <h2 class="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                    <h2 class="mb-4 text-center text-4xl font-extrabold tracking-tight text-gray-900">
                         Contact
                         Us</h2>
-                    <h4 class="mx-8 mt-4 mb-6 text-center font-light font-semibold tracking-tight text-gray-500 dark:text-gray-400 sm:text-xl md:text-2xl lg:mt-8 lg:mb-10">
+                    <h4 class="mx-8 mt-4 mb-6 text-center font-light font-semibold tracking-tight text-gray-500 sm:text-xl md:text-2xl lg:mt-8 lg:mb-10">
                         We'd Love to Hear From You</h4>
                     <form method="POST" id="contact-form" class="space-y-8">
                         <div>
-                            <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">Your
+                            <label for="email" class="mb-2 block text-sm font-medium text-gray-900">Your
                                 email</label>
                             <input required maxlength="255" type="email" name="email" id="email" autocomplete="email"
                                    placeholder="name@email.com"
@@ -50,14 +50,14 @@
                         </div>
                         <div>
                             <label for="subject"
-                                   class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
+                                   class="mb-2 block text-sm font-medium text-gray-900">Subject</label>
                             <input maxlength="70" required type="text" name="subject" id="subject"
                                    placeholder="How we can help you"
                                    class="mt-2 block w-full rounded-md border-2 border-gray-300 p-2 shadow-sm outline-none focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm">
                         </div>
                         <div class="sm:col-span-2">
                             <label for="message"
-                                   class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-400">Your
+                                   class="mb-2 block text-sm font-medium text-gray-900">Your
                                 message</label>
                             <textarea maxlength="1000" required id="message" name="message" rows="6"
                                       class="mt-2 block h-24 max-h-96 w-full rounded-md border-2 border-gray-300 p-2 shadow-sm outline-none focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm"
