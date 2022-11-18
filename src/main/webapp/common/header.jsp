@@ -22,11 +22,11 @@
 
             <div class="flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex flex-shrink-0 items-center">
-                    <div class="select-none sm:items-stretch sm:justify-start">
-                        <img class="pointer-events-none block w-16 mx-4"
-                             src="../resources/logos/kfupm_logo_mini.svg"
-                             alt="King Fahd University of Petroleum & Minerals">
-                    </div>
+<%--                    <div class="select-none sm:items-stretch sm:justify-start">--%>
+<%--                        <img class="pointer-events-none block w-16 mx-4"--%>
+<%--                             src="../resources/logos/kfupm_logo_mini.svg"--%>
+<%--                             alt="King Fahd University of Petroleum & Minerals">--%>
+<%--                    </div>--%>
                     <a class="mb-4 flex items-center sm:mb-0" href="<c:url value="/"/>">
                         <img class="pointer-events-none block w-40 select-none" width="873" height="583"
                              src="../resources/logos/ceee_logo.png" alt="Center of Excellence in Energy Efficiency">

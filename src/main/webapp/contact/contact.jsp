@@ -64,7 +64,7 @@
                                       placeholder="Leave a comment..."></textarea>
                         </div>
                         <div id="submit-button" tabindex="0" aria-keyshortcuts="enter"
-                             class="w-full mt-4 rounded border text-center place-self-center cursor-pointer border-cyan-400 bg-cyan-300 p-2.5 shadow-sm transition hover:scale-90">
+                             class="w-full mt-4 rounded border text-center place-self-center cursor-pointer border-cyan-400 bg-cyan-300 p-2.5 shadow-sm transition-transform duration-200 hover:scale-90">
                             Send message
                         </div>
                         <input type="submit" id="submit" hidden>

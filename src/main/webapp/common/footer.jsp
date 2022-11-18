@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<footer class="bg-gray-50 px-8 py-4 shadow">
+<footer class="bg-gray-50 px-8 py-4 isolate shadow ">
     <div class="flex items-center justify-between max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <a href="https://ri.kfupm.edu.sa/" target=”_blank” class="flex items-center">
             <img src="../resources/logos/ri_logo.png" class="pointer-events-none mr-3 h-8 select-none" alt="RI Logo">
