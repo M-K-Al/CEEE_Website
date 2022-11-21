@@ -27,7 +27,7 @@
 <%--                             src="../resources/logos/kfupm_logo_mini.svg"--%>
 <%--                             alt="King Fahd University of Petroleum & Minerals">--%>
 <%--                    </div>--%>
-                    <a class="mb-4 flex items-center sm:mb-0" href="<c:url value="/"/>">
+                    <a class="mb-4 flex items-center sm:mb-0" href="${pageContext.request.contextPath}/">
                         <img class="pointer-events-none block w-40 select-none" width="873" height="583"
                              src="../resources/logos/ceee_logo.png" alt="Center of Excellence in Energy Efficiency">
                     </a>
@@ -44,7 +44,7 @@
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div class="hidden sm:ml-6 sm:block">
                     <div class="flex items-center space-x-4">
-                        <a href="javascript:void(0);"
+                        <a href="${pageContext.request.contextPath}/login"
                            class="rounded-md px-3 py-2 text-sm text-base font-medium text-gray-600 hover:text-black"
                            aria-current="page">Login</a>
                         <div class="select-none sm:items-stretch sm:justify-start">

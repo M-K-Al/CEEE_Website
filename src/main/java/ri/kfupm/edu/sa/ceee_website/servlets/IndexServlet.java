@@ -1,4 +1,4 @@
-package ri.kfupm.edu.sa.ceee_website.servlet;
+package ri.kfupm.edu.sa.ceee_website.servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

@@ -29,18 +29,19 @@
 
     <div id="content-container" class="absolute top-[60vh] mx-auto w-full self-center">
 
-        <div class="relative max-w-5xl left-1/2 -translate-x-1/2 space-y-20 p-8">
+        <div class="relative left-1/2 max-w-5xl -translate-x-1/2 p-8 space-y-20">
             <section id="visit-project-container" class="flex flex-col space-y-12">
                 <div id="visit-project-header"
                      class="flex w-fit flex-row items-center header text-md group md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
-                    <img alt="Map icon" class="pointer-events-none mr-4 h-12 w-10 select-none pt-2"
+                    <img alt="List icon" class="pointer-events-none mr-4 h-12 w-10 select-none pt-2"
                          src="./resources/icons/list.svg"/>
                     <h5 class="font-semibold leading-none text-gray-900 underline-offset-4 group-hover:underline">
                         Projects List
                     </h5>
                 </div>
                 <p class="mx-2 text-lg font-medium text-gray-500">
-                    A collocation of all publicly available capacity building assessments.
+                    A collocation of all publicly available capacity building assessments made by Center of Excellence
+                    in Energy Efficiency (CEEE).
                 </p>
                 <a href="${pageContext.request.contextPath}/projects"
                    class="z-10 flex flex-1 flex-row border-2 items-center rounded-2xl py-4 px-4 will-change-[background-color,padding,transform] transition-[background-color,padding,transform] duration-300 hover:bg-emerald-400 hover:scale-95 lg:py-6 xl:py-8 2xl:py-10">
@@ -50,19 +51,21 @@
                 </a>
             </section>
 
-            <section id="centers-map-container">
+            <section id="centers-map-container" class="flex flex-col space-y-12">
                 <div id="centers-map-header"
-                     class="mt-10 flex w-fit flex-row items-center header text-md group md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+                     class="flex w-fit flex-row items-center header text-md group md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
                     <img alt="Map icon" class="pointer-events-none mr-4 h-12 w-10 select-none pt-2"
                          src="./resources/icons/map.svg"/>
                     <h5 class="font-semibold leading-none text-gray-900 underline-offset-4 group-hover:underline">
                         CEEE Centers Map
                     </h5>
                 </div>
-                <p class="mx-2 text-lg font-medium text-gray-500">.</p>
+                <p class="mx-2 text-lg font-medium text-gray-500">
+                    All available centers from around Kingdom of Saudi Arabia.
+                </p>
                 <div id="centers-map-embed-container" class="p-4">
                     <%--suppress HtmlDeprecatedAttribute --%>
-                    <iframe scrolling="no" id='centers-map'
+                    <iframe scrolling="no" id='centers-map' title="html"
                             class="w-full my-10 h-[30rem] flex-1 overflow-x-hidden fill-blue-600"
                             src="resources/assets/centers-map.svg"></iframe>
                 </div>
